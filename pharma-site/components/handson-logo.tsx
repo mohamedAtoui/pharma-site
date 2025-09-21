@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 interface HandSonLogoProps {
   className?: string
@@ -7,15 +8,21 @@ interface HandSonLogoProps {
 
 export default function HandSonLogo({ className = '', size = 'md' }: HandSonLogoProps) {
   const sizes = {
-    sm: { fontSize: '1.5rem' },
-    md: { fontSize: '2.5rem' },
-    lg: { fontSize: '4rem' }
+    sm: { width: 120, height: 60 },
+    md: { width: 200, height: 100 },
+    lg: { width: 320, height: 160 }
   }
 
   return (
-    <div className={`inline-flex items-center justify-center font-bold ${className}`} style={{ fontSize: sizes[size].fontSize }}>
-      <span style={{ color: 'var(--handson-green)' }}>HANDS</span>
-      <span style={{ color: 'var(--handson-orange)' }}>ON</span>
+    <div className={`inline-flex items-center justify-center ${className}`}>
+      <Image
+        src="/handson-logo.png"
+        alt="HandSon Logo"
+        width={sizes[size].width}
+        height={sizes[size].height}
+        priority
+        className="object-contain"
+      />
     </div>
   )
 }

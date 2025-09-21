@@ -101,10 +101,10 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="text-white py-8" style={{ backgroundColor: 'var(--handson-green)' }}>
+      <footer className="text-gray-800 py-8 bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-4">
-            <HandSonLogo size="sm" className="text-white" />
+            <HandSonLogo size="sm" />
           </div>
           <p>© {new Date().getFullYear()} HandSon - Solutions pharmaceutiques innovantes</p>
         </div>

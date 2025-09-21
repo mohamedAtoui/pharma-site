@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "HandSon - Site en Construction",
   description: "HandSon - Solutions pharmaceutiques innovantes. Site web en cours de développement.",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
