@@ -38,7 +38,7 @@ export default function ProductCard({ title, description, imageSrc, features }: 
           href="#"
           className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors group"
         >
-          En savoir plus
+          Learn More
           <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>

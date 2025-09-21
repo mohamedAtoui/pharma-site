@@ -55,13 +55,13 @@ export default function ContactForm() {
 
   return (
     <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-      <h3 className="text-2xl font-bold text-gray-900 mb-6">Envoyez-nous un message</h3>
+      <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
 
       {submitSuccess ? (
         <div className="p-6 rounded-xl mb-6 text-center" style={{ backgroundColor: 'var(--handson-green)', color: 'white' }}>
           <div className="text-2xl mb-2">✅</div>
-          <p className="font-semibold">Message envoyé avec succès !</p>
-          <p className="text-sm mt-1">Nous vous répondrons dans les plus brefs délais.</p>
+          <p className="font-semibold">Message sent successfully!</p>
+          <p className="text-sm mt-1">We will respond as soon as possible.</p>
         </div>
       ) : null}
 
@@ -69,7 +69,7 @@ export default function ContactForm() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="space-y-2">
             <Label htmlFor="name" className="text-gray-700 font-medium">
-              Nom complet
+              Full Name
             </Label>
             <Input
               id="name"
@@ -78,7 +78,7 @@ export default function ContactForm() {
               onChange={handleChange}
               required
               className="h-12 border-gray-200 focus:border-green-500 focus:ring-green-500"
-              placeholder="Votre nom"
+              placeholder="Your name"
             />
           </div>
           <div className="space-y-2">
@@ -93,14 +93,14 @@ export default function ContactForm() {
               onChange={handleChange}
               required
               className="h-12 border-gray-200 focus:border-green-500 focus:ring-green-500"
-              placeholder="votre@email.com"
+              placeholder="your@email.com"
             />
           </div>
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="subject" className="text-gray-700 font-medium">
-            Sujet
+            Subject
           </Label>
           <Input
             id="subject"
@@ -109,7 +109,7 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             className="h-12 border-gray-200 focus:border-green-500 focus:ring-green-500"
-            placeholder="Sujet de votre message"
+            placeholder="Subject of your message"
           />
         </div>
 
@@ -125,7 +125,7 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             className="border-gray-200 focus:border-green-500 focus:ring-green-500 resize-none"
-            placeholder="Décrivez votre demande en détail..."
+            placeholder="Describe your request in detail..."
           />
         </div>
 
@@ -138,12 +138,12 @@ export default function ContactForm() {
           {isSubmitting ? (
             <>
               <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-              Envoi en cours...
+              Sending...
             </>
           ) : (
             <>
               <Send className="mr-2 h-4 w-4" />
-              Envoyer le message
+              Send Message
             </>
           )}
         </Button>

@@ -17,7 +17,7 @@ export default function ProductHighlight({ title, description, imageSrc }: Produ
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
         <p className="text-gray-700 mb-4">{description}</p>
         <Link href="#" className="text-gray-900 font-medium hover:underline inline-flex items-center">
-          En savoir plus
+          Learn More
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4 ml-1"

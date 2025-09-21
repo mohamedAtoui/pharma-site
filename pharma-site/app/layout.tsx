@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HandSon - Site en Construction",
-  description: "HandSon - Solutions pharmaceutiques innovantes. Site web en cours de développement.",
+  title: "HandSon - Under Construction",
+  description: "HandSon - Innovative pharmaceutical solutions. Website under development.",
   icons: {
     icon: '/favicon.ico',
   },
