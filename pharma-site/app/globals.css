@@ -45,6 +45,15 @@
 
 :root {
   --radius: 0.625rem;
+  
+  /* HandSon Brand Colors */
+  --handson-green: #22c55e;
+  --handson-orange: #f97316;
+  --handson-green-light: #4ade80;
+  --handson-green-dark: #16a34a;
+  --handson-orange-light: #fb923c;
+  --handson-orange-dark: #ea580c;
+  
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);

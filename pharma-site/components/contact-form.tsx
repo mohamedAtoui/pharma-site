@@ -54,11 +54,11 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-gray-50 p-8 rounded-2xl">
+    <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
       <h3 className="text-2xl font-bold text-gray-900 mb-6">Envoyez-nous un message</h3>
 
       {submitSuccess ? (
-        <div className="bg-green-50 border border-green-200 text-green-700 p-6 rounded-xl mb-6 text-center">
+        <div className="p-6 rounded-xl mb-6 text-center" style={{ backgroundColor: 'var(--handson-green)', color: 'white' }}>
           <div className="text-2xl mb-2">✅</div>
           <p className="font-semibold">Message envoyé avec succès !</p>
           <p className="text-sm mt-1">Nous vous répondrons dans les plus brefs délais.</p>
@@ -77,7 +77,7 @@ export default function ContactForm() {
               value={formData.name}
               onChange={handleChange}
               required
-              className="h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+              className="h-12 border-gray-200 focus:border-green-500 focus:ring-green-500"
               placeholder="Votre nom"
             />
           </div>
@@ -92,7 +92,7 @@ export default function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+              className="h-12 border-gray-200 focus:border-green-500 focus:ring-green-500"
               placeholder="votre@email.com"
             />
           </div>
@@ -108,7 +108,7 @@ export default function ContactForm() {
             value={formData.subject}
             onChange={handleChange}
             required
-            className="h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+            className="h-12 border-gray-200 focus:border-green-500 focus:ring-green-500"
             placeholder="Sujet de votre message"
           />
         </div>
@@ -124,14 +124,15 @@ export default function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             required
-            className="border-gray-200 focus:border-blue-500 focus:ring-blue-500 resize-none"
+            className="border-gray-200 focus:border-green-500 focus:ring-green-500 resize-none"
             placeholder="Décrivez votre demande en détail..."
           />
         </div>
 
         <Button
           type="submit"
-          className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors shadow-lg hover:shadow-xl"
+          className="w-full h-12 text-white font-semibold rounded-lg transition-colors shadow-lg hover:shadow-xl hover:opacity-90"
+          style={{ backgroundColor: 'var(--handson-green)' }}
           disabled={isSubmitting}
         >
           {isSubmitting ? (
