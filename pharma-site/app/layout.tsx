@@ -13,10 +13,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HandSon - Under Construction",
-  description: "HandSon - Innovative pharmaceutical solutions. Website under development.",
+  metadataBase: new URL("https://www.sarlhandson.com"),
+  title: {
+    default: "HandSon - Innovative Pharmaceutical Solutions",
+    template: "%s | HandSon",
+  },
+  description:
+    "HandSon - Innovative pharmaceutical solutions including dietary supplements for memory, cognitive function and mental vitality.",
+  keywords: [
+    "HandSon",
+    "pharmaceutical",
+    "supplements",
+    "Synapgen",
+    "Magnesium",
+    "memory",
+    "cognitive function",
+  ],
   icons: {
-    icon: '/favicon.ico',
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://www.sarlhandson.com",
+    siteName: "HandSon",
   },
 };
 
