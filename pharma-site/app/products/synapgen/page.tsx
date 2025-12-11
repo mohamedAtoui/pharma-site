@@ -9,17 +9,32 @@ export const metadata: Metadata = {
   description:
     "Synapgen with Magnesium L-threonate supports memory, concentration and cognitive functions. A dietary supplement by HandSon for clearer memory and better focus.",
   keywords: [
+    // English
     "Synapgen",
     "Magnesium",
     "Magnesium-L-threonate",
     "L-threonate",
     "Mg",
+    "MgT",
     "HandSon",
     "memory supplement",
     "cognitive function",
     "concentration",
     "brain health",
     "mental vitality",
+    // French (Algeria)
+    "Magnesium L-threonat",
+    "Mémoire",
+    "Concentration",
+    "Fonctions cognitifs",
+    "Gériatrie",
+    "Examen",
+    // Arabic (Algeria)
+    "مغنزيوم",
+    "مغنيزيوم ل ثريونات",
+    "ذاكرة",
+    "تركيز",
+    "اختبار",
   ],
   openGraph: {
     title: "Synapgen - Memory & Cognitive Support Supplement | HandSon",
