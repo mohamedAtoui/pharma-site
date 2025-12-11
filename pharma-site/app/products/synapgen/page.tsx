@@ -5,7 +5,7 @@ import { ArrowLeft, CheckCircle, Pill, Clock } from "lucide-react"
 import HandSonLogo from "@/components/handson-logo"
 
 export const metadata: Metadata = {
-  title: "Synapgen - Memory & Cognitive Support Supplement",
+  title: "Synapgen - Memory & Cognitive Support Supplement | HandSon",
   description:
     "Synapgen with Magnesium L-threonate supports memory, concentration and cognitive functions. A dietary supplement by HandSon for clearer memory and better focus.",
   keywords: [
@@ -53,10 +53,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Synapgen - Memory & Cognitive Support Supplement",
+    title: "Synapgen - Memory & Cognitive Support Supplement | HandSon",
     description:
       "Synapgen with Magnesium L-threonate supports memory, concentration and cognitive functions.",
     images: ["/synapgen.png"],
+  },
+  alternates: {
+    canonical: "https://www.sarlhandson.com/products/synapgen",
   },
 }
 
