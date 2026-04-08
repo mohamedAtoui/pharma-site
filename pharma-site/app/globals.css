@@ -45,15 +45,30 @@
 
 :root {
   --radius: 0.625rem;
-  
-  /* HandSon Brand Colors */
-  --handson-green: #22c55e;
+
+  /* HandSon Brand — refined pharmaceutical palette */
+  --handson-green: #1a9f4a;
+  --handson-green-light: #2db85e;
+  --handson-green-dark: #14793a;
+  --handson-green-tint: #edf8f1;
   --handson-orange: #f97316;
-  --handson-green-light: #4ade80;
-  --handson-green-dark: #16a34a;
   --handson-orange-light: #fb923c;
   --handson-orange-dark: #ea580c;
-  
+  --handson-orange-tint: #fff7ed;
+
+  /* Neutral system */
+  --handson-slate-50: #f8fafc;
+  --handson-slate-100: #f1f5f9;
+  --handson-slate-200: #e2e8f0;
+  --handson-slate-800: #1e293b;
+  --handson-slate-900: #0f172a;
+
+  /* Shadow system */
+  --shadow-soft: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-card: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+  --shadow-elevated: 0 20px 25px -5px rgba(0,0,0,0.07), 0 8px 10px -6px rgba(0,0,0,0.04);
+  --shadow-dramatic: 0 25px 50px -12px rgba(0,0,0,0.15);
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -129,3 +144,248 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* ═══════════════════════════════════════
+   HandSon Design System — Clinical Luxury
+   ═══════════════════════════════════════ */
+
+/* Brand badge pills */
+.badge-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background-color: var(--handson-green);
+  color: white;
+}
+
+.badge-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--handson-green);
+  color: var(--handson-green);
+  background: var(--handson-green-tint);
+}
+
+.badge-muted {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  background: var(--handson-slate-100);
+  color: var(--handson-slate-800);
+}
+
+/* Icon box for contact items */
+.icon-box {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-box-green {
+  background: linear-gradient(135deg, var(--handson-green), var(--handson-green-dark));
+  color: white;
+  box-shadow: 0 4px 12px rgba(26, 159, 74, 0.25);
+}
+
+.icon-box-orange {
+  background: linear-gradient(135deg, var(--handson-orange), var(--handson-orange-dark));
+  color: white;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.25);
+}
+
+/* Brand CTA button */
+.btn-handson {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.01em;
+  color: white;
+  background: linear-gradient(135deg, var(--handson-green), var(--handson-green-dark));
+  box-shadow: 0 4px 14px rgba(26, 159, 74, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-handson:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(26, 159, 74, 0.35);
+  background: linear-gradient(135deg, var(--handson-green-light), var(--handson-green));
+}
+
+.btn-handson:active {
+  transform: translateY(0);
+}
+
+/* Section divider — brand gradient accent line */
+.section-divider {
+  width: 60px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--handson-green), var(--handson-orange));
+}
+
+/* Dot pattern background overlay */
+.bg-dots {
+  background-image: radial-gradient(circle, rgba(26, 159, 74, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(26, 159, 74, 0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(249, 115, 22, 0.05), transparent),
+    linear-gradient(180deg, var(--handson-slate-50) 0%, #ffffff 50%, var(--handson-green-tint) 100%);
+}
+
+/* ─── 3D Product Box ─── */
+
+.product-box-container {
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem 3rem;
+}
+
+.product-box-wrapper {
+  position: relative;
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: rotateY(-8deg) rotateX(3deg);
+  transform-style: preserve-3d;
+}
+
+.product-box-wrapper:hover {
+  transform: rotateY(-2deg) rotateX(1deg) scale(1.04);
+}
+
+.product-box-image {
+  border-radius: 6px;
+  filter:
+    drop-shadow(0 30px 60px rgba(0, 0, 0, 0.25))
+    drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15))
+    drop-shadow(0 5px 8px rgba(0, 0, 0, 0.1));
+  transition: filter 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.product-box-wrapper:hover .product-box-image {
+  filter:
+    drop-shadow(0 35px 70px rgba(0, 0, 0, 0.3))
+    drop-shadow(0 18px 30px rgba(0, 0, 0, 0.18))
+    drop-shadow(0 6px 10px rgba(0, 0, 0, 0.12));
+}
+
+/* Ground shadow — elongated ellipse for depth */
+.product-box-reflection {
+  position: absolute;
+  bottom: -24px;
+  left: 5%;
+  right: 5%;
+  height: 50px;
+  background: radial-gradient(ellipse 90% 100% at center, rgba(0, 0, 0, 0.15) 0%, transparent 65%);
+  filter: blur(12px);
+  transition: all 0.7s ease;
+  transform: scaleX(0.9);
+}
+
+.product-box-wrapper:hover .product-box-reflection {
+  opacity: 0.6;
+  transform: scaleX(1);
+  bottom: -28px;
+}
+
+/* ─── Smooth scroll & selection ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(26, 159, 74, 0.15);
+  color: var(--handson-slate-900);
+}
+
+/* ─── Animations ─── */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  opacity: 0;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  opacity: 0;
+}
+
+/* Product card hover */
+.product-card {
+  box-shadow: var(--shadow-card);
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-dramatic);
+}
+
+.animation-delay-100 { animation-delay: 100ms; }
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-500 { animation-delay: 500ms; }

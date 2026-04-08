@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock } from "lucide-react"
+import { Phone, Mail, Clock } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { CheckCircle, ArrowRight } from "lucide-react"
@@ -9,91 +9,105 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100/80" style={{ boxShadow: 'var(--shadow-soft)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center h-16">
-            <div className="flex justify-center w-full">
-              <HandSonLogo size="sm" />
-            </div>
+          <div className="flex items-center justify-between h-16">
+            <HandSonLogo size="sm" />
+            <nav className="hidden sm:flex items-center gap-8">
+              <Link href="#products" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Products</Link>
+              <Link href="#contact" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Contact</Link>
+            </nav>
           </div>
         </div>
       </header>
 
-      {/* Under Construction Section */}
-      <section className="relative py-20 lg:py-32 min-h-[60vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-white to-orange-50"></div>
+      {/* Hero Section */}
+      <section className="relative py-24 lg:py-36 min-h-[65vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0 hero-gradient"></div>
+        <div className="absolute inset-0 bg-dots opacity-40"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
-            {/* Logo */}
-            <div className="mb-12 flex justify-center">
+            <div className="mb-10 flex justify-center animate-fade-in-up">
               <HandSonLogo size="lg" />
             </div>
-            
-            {/* Under Construction Message */}
-            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-medium"
-                 style={{ backgroundColor: 'var(--handson-green)', color: 'white' }}>
-              <Clock className="h-5 w-5 mr-2" />
-              Under Construction
+
+            <p className="text-lg sm:text-xl text-gray-500 mb-8 max-w-2xl mx-auto animate-fade-in-up animation-delay-200" style={{ letterSpacing: '0.01em' }}>
+              Innovative pharmaceutical solutions for your health and well-being
+            </p>
+
+            <div className="animate-fade-in-up animation-delay-300">
+              <div className="badge-outline">
+                <Clock className="h-4 w-4" />
+                Website Under Construction
+              </div>
+            </div>
+
+            <div className="mt-10 flex justify-center gap-4 animate-fade-in-up animation-delay-400">
+              <Link href="#products" className="btn-handson">
+                View Products
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link href="#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-gray-700 bg-white border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all duration-300" style={{ fontSize: '0.9375rem' }}>
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* Products Section */}
-      <section className="py-20 bg-white">
+      <section id="products" className="py-24" style={{ background: 'var(--handson-slate-50)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div
-              className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6"
-              style={{ backgroundColor: "var(--handson-green)", color: "white" }}
-            >
-              Our Products
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+            <div className="badge-green mb-6">Our Products</div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4" style={{ letterSpacing: '-0.02em' }}>
               Discover Our Solutions
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Quality pharmaceutical products designed to support your health and well-being.
+            <div className="section-divider mx-auto mb-6"></div>
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              Quality pharmaceutical products designed to support your health and cognitive well-being.
             </p>
           </div>
 
-          <div className="max-w-lg mx-auto">
-            <Link href="/products/synapgen" className="block">
-              <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                <div className="relative h-64 overflow-hidden">
-                  <Image
-                    src="/synapgen.png"
-                    alt="Synapgen"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Synapgen</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    Your ally for clearer memory and better focus! Supports memory, concentration and cognitive functions.
-                  </p>
-
-                  <div className="space-y-3 mb-6">
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                      <span className="text-gray-700">Supports memory function</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                      <span className="text-gray-700">Enhances concentration</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                      <span className="text-gray-700">Contains Magnesium L-thréonate</span>
-                    </div>
+          {/* Product Card — editorial side-by-side layout */}
+          <div className="max-w-5xl mx-auto">
+            <Link href="/products/synapgen" className="block group">
+              <div className="product-card bg-white rounded-2xl overflow-hidden transition-all duration-500">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  {/* Product Image */}
+                  <div className="relative h-72 lg:h-auto lg:min-h-[320px] overflow-hidden" style={{ background: 'linear-gradient(145deg, #1a1a2e 0%, #16213e 100%)' }}>
+                    <Image
+                      src="/synapgen-landing.png"
+                      alt="Synapgen - Memory and Mental Vitality Supplement"
+                      fill
+                      className="object-contain object-center p-4 group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
 
-                  <span className="inline-flex items-center text-blue-600 font-semibold group-hover:text-blue-700 transition-colors">
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </span>
+                  {/* Product Info */}
+                  <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <div className="badge-muted mb-4 self-start">Dietary Supplement</div>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-4" style={{ letterSpacing: '-0.02em' }}>
+                      Synapgen
+                    </h3>
+                    <p className="text-gray-500 mb-6 leading-relaxed text-base">
+                      Your ally for clearer memory and better focus. Supports memory, concentration and cognitive functions with Magnesium L-thréonate.
+                    </p>
+
+                    <div className="space-y-3 mb-8">
+                      {["Supports memory function", "Enhances concentration", "Contains Magnesium L-thréonate"].map((feature, i) => (
+                        <div key={i} className="flex items-center gap-3">
+                          <CheckCircle className="h-5 w-5 flex-shrink-0" style={{ color: 'var(--handson-green)' }} />
+                          <span className="text-gray-600 text-sm">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <span className="inline-flex items-center gap-2 font-semibold group-hover:gap-3 transition-all duration-300" style={{ color: 'var(--handson-green)' }}>
+                      Learn More
+                      <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </div>
                 </div>
               </div>
             </Link>
@@ -102,56 +116,44 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50">
+      <section id="contact" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6"
-                 style={{ backgroundColor: 'var(--handson-green)', color: 'white' }}>
-              Contact
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Contact Us</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our team is at your disposal to answer your questions and support you in your
-              projects.
+            <div className="badge-green mb-6">Contact</div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4" style={{ letterSpacing: '-0.02em' }}>
+              Get In Touch
+            </h2>
+            <div className="section-divider mx-auto mb-6"></div>
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              Our team is at your disposal to answer your questions and support your projects.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-5xl mx-auto">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">Contact Information</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-8" style={{ letterSpacing: '-0.01em' }}>
+                Contact Information
+              </h3>
 
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-                       style={{ backgroundColor: 'var(--handson-green)' }}>
-                    <MapPin className="h-6 w-6 text-white" />
+                <div className="flex items-start gap-4">
+                  <div className="icon-box icon-box-orange">
+                    <Mail className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Address</h4>
-                    <p className="text-gray-600">Gasria, Setif, Algeria</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-                       style={{ backgroundColor: 'var(--handson-orange)' }}>
-                    <Mail className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
+                    <h4 className="font-semibold text-gray-900 mb-1 text-sm uppercase tracking-wide">Email</h4>
                     <p className="text-gray-600">contact@handson.com</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-                       style={{ backgroundColor: 'var(--handson-green)' }}>
-                    <Phone className="h-6 w-6 text-white" />
+                <div className="flex items-start gap-4">
+                  <div className="icon-box icon-box-green">
+                    <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                    <p className="text-gray-600">+213 560797282</p>
-                    <p className="text-gray-600">Sun-Thu: 9:00 AM-6:00 PM</p>
+                    <h4 className="font-semibold text-gray-900 mb-1 text-sm uppercase tracking-wide">Phone</h4>
+                    <p className="text-gray-600">+213 (0) 664117011</p>
+                    <p className="text-gray-400 text-sm mt-1">Sun–Thu: 9:00 AM – 6:00 PM</p>
                   </div>
                 </div>
               </div>
@@ -165,12 +167,20 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="text-gray-800 py-8 bg-white border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex justify-center mb-4">
+      <footer className="py-12 border-t border-gray-100" style={{ background: 'var(--handson-slate-50)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center gap-6">
             <HandSonLogo size="sm" />
+            <p className="text-sm text-gray-400" style={{ letterSpacing: '0.02em' }}>
+              Innovative pharmaceutical solutions
+            </p>
+            <div className="section-divider"></div>
+            <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-gray-400">
+              <span>&copy; {new Date().getFullYear()} HandSon</span>
+              <span className="hidden sm:inline">&middot;</span>
+              <span>All rights reserved</span>
+            </div>
           </div>
-          <p>© {new Date().getFullYear()} HandSon - Innovative pharmaceutical solutions</p>
         </div>
       </footer>
     </div>

@@ -2,11 +2,10 @@
 
 import type React from "react"
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Send } from "lucide-react"
+import { Send, CheckCircle } from "lucide-react"
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -45,30 +44,38 @@ export default function ContactForm() {
       setFormData({ name: "", email: "", subject: "", message: "" })
     } catch (error) {
       console.error('Error sending message:', error)
-      // You might want to show an error message to the user here
     } finally {
       setIsSubmitting(false)
-      // Reset success message after 5 seconds
       setTimeout(() => setSubmitSuccess(false), 5000)
     }
   }
 
+  const inputClasses = "h-12 border-gray-200 bg-white rounded-lg transition-all duration-200 focus:border-[var(--handson-green)] focus:ring-[var(--handson-green)] focus:ring-1 placeholder:text-gray-300"
+
   return (
-    <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-      <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
+    <div className="bg-white p-8 rounded-2xl border border-gray-100" style={{ boxShadow: 'var(--shadow-card)' }}>
+      <h3 className="text-xl font-bold text-gray-900 mb-6" style={{ letterSpacing: '-0.01em' }}>
+        Send us a message
+      </h3>
 
       {submitSuccess ? (
-        <div className="p-6 rounded-xl mb-6 text-center" style={{ backgroundColor: 'var(--handson-green)', color: 'white' }}>
-          <div className="text-2xl mb-2">✅</div>
-          <p className="font-semibold">Message sent successfully!</p>
-          <p className="text-sm mt-1">We will respond as soon as possible.</p>
+        <div
+          className="p-6 rounded-xl mb-6 text-center border"
+          style={{
+            background: 'var(--handson-green-tint)',
+            borderColor: 'rgba(26, 159, 74, 0.2)',
+          }}
+        >
+          <CheckCircle className="h-8 w-8 mx-auto mb-2" style={{ color: 'var(--handson-green)' }} />
+          <p className="font-semibold text-gray-900">Message sent successfully!</p>
+          <p className="text-sm mt-1 text-gray-500">We will respond as soon as possible.</p>
         </div>
       ) : null}
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-gray-700 font-medium">
+            <Label htmlFor="name" className="text-gray-600 font-medium text-sm">
               Full Name
             </Label>
             <Input
@@ -77,12 +84,12 @@ export default function ContactForm() {
               value={formData.name}
               onChange={handleChange}
               required
-              className="h-12 border-gray-200 focus:border-green-500 focus:ring-green-500"
+              className={inputClasses}
               placeholder="Your name"
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-gray-700 font-medium">
+            <Label htmlFor="email" className="text-gray-600 font-medium text-sm">
               Email
             </Label>
             <Input
@@ -92,14 +99,14 @@ export default function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="h-12 border-gray-200 focus:border-green-500 focus:ring-green-500"
+              className={inputClasses}
               placeholder="your@email.com"
             />
           </div>
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="subject" className="text-gray-700 font-medium">
+          <Label htmlFor="subject" className="text-gray-600 font-medium text-sm">
             Subject
           </Label>
           <Input
@@ -108,45 +115,44 @@ export default function ContactForm() {
             value={formData.subject}
             onChange={handleChange}
             required
-            className="h-12 border-gray-200 focus:border-green-500 focus:ring-green-500"
+            className={inputClasses}
             placeholder="Subject of your message"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="message" className="text-gray-700 font-medium">
+          <Label htmlFor="message" className="text-gray-600 font-medium text-sm">
             Message
           </Label>
           <Textarea
             id="message"
             name="message"
-            rows={6}
+            rows={5}
             value={formData.message}
             onChange={handleChange}
             required
-            className="border-gray-200 focus:border-green-500 focus:ring-green-500 resize-none"
+            className="border-gray-200 bg-white rounded-lg transition-all duration-200 focus:border-[var(--handson-green)] focus:ring-[var(--handson-green)] focus:ring-1 resize-none placeholder:text-gray-300"
             placeholder="Describe your request in detail..."
           />
         </div>
 
-        <Button
+        <button
           type="submit"
-          className="w-full h-12 text-white font-semibold rounded-lg transition-colors shadow-lg hover:shadow-xl hover:opacity-90"
-          style={{ backgroundColor: 'var(--handson-green)' }}
+          className="btn-handson w-full h-12"
           disabled={isSubmitting}
         >
           {isSubmitting ? (
             <>
-              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
               Sending...
             </>
           ) : (
             <>
-              <Send className="mr-2 h-4 w-4" />
+              <Send className="h-4 w-4" />
               Send Message
             </>
           )}
-        </Button>
+        </button>
       </form>
     </div>
   )
