@@ -76,7 +76,7 @@ const fr = {
     availabilityBody:
       "Synapgen est disponible auprès des principaux grossistes pharmaceutiques. Pour toute demande de référencement, d'approvisionnement ou d'informations commerciales, notre équipe reste à votre disposition afin de vous accompagner dans l'intégration du produit au sein de votre officine.",
     telLabel: "Tél",
-    telValue: "213664117011",
+    telValue: "+213 664117011",
     emailLabel: "E-mail",
     emailValue: "sarl.handson@gmail.com",
   },
@@ -167,7 +167,7 @@ const en: typeof fr = {
     availabilityBody:
       "Synapgen is available from major pharmaceutical wholesalers. For any listing requests, supply inquiries, or commercial information, our team remains at your disposal to support the integration of the product into your pharmacy.",
     telLabel: "Tel",
-    telValue: "213664117011",
+    telValue: "+213 664117011",
     emailLabel: "Email",
     emailValue: "sarl.handson@gmail.com",
   },

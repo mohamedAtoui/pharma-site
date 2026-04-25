@@ -123,7 +123,7 @@ export default function SynapgenContent() {
                     <Phone className="h-4 w-4" style={{ color: "var(--handson-green)" }} />
                     <span className="font-medium">{t.synapgen.telLabel} :</span>
                     <a
-                      href={`tel:+${t.synapgen.telValue}`}
+                      href={`tel:${t.synapgen.telValue.replace(/\s/g, "")}`}
                       className="hover:underline"
                     >
                       {t.synapgen.telValue}
