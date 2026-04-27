@@ -9,15 +9,17 @@ export default function AnnouncementBanner() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center gap-2.5 sm:gap-4 font-semibold tracking-tight text-[12px] sm:text-[15px]">
           <span className="flex items-center gap-2 sm:gap-2.5 min-w-0">
-            <span className="synapgen-dance shrink-0 inline-flex items-center justify-center bg-white rounded-md p-[2px] shadow-[0_2px_8px_rgba(0,0,0,0.18)] ring-1 ring-white/40 h-6 sm:h-7">
-              <Image
-                src="/synapgen-product.png"
-                alt="Synapgen"
-                width={64}
-                height={36}
-                className="h-full w-auto object-contain"
-                priority
-              />
+            <span className="synapgen-slide shrink-0">
+              <span className="synapgen-dance inline-flex items-center justify-center bg-white rounded-md p-[2px] shadow-[0_2px_8px_rgba(0,0,0,0.18)] ring-1 ring-white/40 h-6 sm:h-7">
+                <Image
+                  src="/synapgen-product.png"
+                  alt="Synapgen"
+                  width={64}
+                  height={36}
+                  className="h-full w-auto object-contain"
+                  priority
+                />
+              </span>
             </span>
             <span lang="fr" className="sm:hidden whitespace-nowrap">
               Synapgen disponible chez les grossistes.

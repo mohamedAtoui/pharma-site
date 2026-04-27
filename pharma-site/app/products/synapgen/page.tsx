@@ -3,6 +3,7 @@ import Link from "next/link"
 import { ArrowLeft, CheckCircle, Pill, Clock } from "lucide-react"
 import HandSonLogo from "@/components/handson-logo"
 import ProductBox3D from "@/components/product-box-3d"
+import AnnouncementBanner from "@/components/announcement-banner"
 
 export const metadata: Metadata = {
   title: "Synapgen by HandSon - Complément Alimentaire Magnésium L-Thréonate | Memory Supplement",
@@ -163,6 +164,8 @@ export default function SynapgenPage() {
             </div>
           </div>
         </header>
+
+        <AnnouncementBanner />
 
         {/* Product Hero */}
         <section className="py-16 lg:py-24">

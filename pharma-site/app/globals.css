@@ -404,6 +404,27 @@ html {
   will-change: transform;
 }
 
+/* Synapgen banner — slide in from the right, pause before the text,
+   then bounce back. Composed on a separate wrapper so the dance
+   wobble (rotation) on the inner chip keeps running alongside it. */
+@keyframes synapgen-slide {
+  0%   { transform: translateX(60px); }
+  28%  { transform: translateX(0); }
+  48%  { transform: translateX(0); }
+  58%  { transform: translateX(26px); }
+  68%  { transform: translateX(6px); }
+  78%  { transform: translateX(18px); }
+  88%  { transform: translateX(8px); }
+  100% { transform: translateX(60px); }
+}
+
+.synapgen-slide {
+  display: inline-flex;
+  animation: synapgen-slide 6s ease-in-out infinite;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .synapgen-dance { animation: none; }
+  .synapgen-dance,
+  .synapgen-slide { animation: none; }
 }
