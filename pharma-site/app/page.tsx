@@ -4,6 +4,7 @@ import Image from "next/image"
 import { CheckCircle, ArrowRight } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import HandSonLogo from "@/components/handson-logo"
+import AnnouncementBanner from "@/components/announcement-banner"
 
 export default function Home() {
   return (
@@ -20,6 +21,8 @@ export default function Home() {
           </div>
         </div>
       </header>
+
+      <AnnouncementBanner />
 
       {/* Hero Section */}
       <section className="relative py-24 lg:py-36 min-h-[65vh] flex items-center overflow-hidden">
