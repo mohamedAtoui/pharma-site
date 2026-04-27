@@ -389,3 +389,21 @@ html {
 .animation-delay-300 { animation-delay: 300ms; }
 .animation-delay-400 { animation-delay: 400ms; }
 .animation-delay-500 { animation-delay: 500ms; }
+
+/* Synapgen banner — gentle "dance" wobble for the product chip */
+@keyframes synapgen-dance {
+  0%, 100% { transform: rotate(-4deg) translateY(0); }
+  25%      { transform: rotate(3deg)  translateY(-1.5px); }
+  50%      { transform: rotate(-2deg) translateY(0); }
+  75%      { transform: rotate(4deg)  translateY(-1.5px); }
+}
+
+.synapgen-dance {
+  animation: synapgen-dance 2.4s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .synapgen-dance { animation: none; }
+}
