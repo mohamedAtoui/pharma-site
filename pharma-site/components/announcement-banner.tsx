@@ -25,7 +25,7 @@ export default function AnnouncementBanner() {
             {/* Mobile copy */}
             <span data-lang-only="fr" lang="fr" className="sm:hidden whitespace-nowrap">
               Synapgen disponible chez les{" "}
-              <span className="text-yellow-200 font-bold">grossistes pharma</span>
+              <span className="text-yellow-200 font-bold">GROSSISTES PHARMA</span>
               .
             </span>
             <span data-lang-only="en" lang="en" className="sm:hidden whitespace-nowrap">
@@ -37,7 +37,7 @@ export default function AnnouncementBanner() {
             <span data-lang-only="fr" lang="fr" className="hidden sm:inline">
               Synapgen est disponible chez les{" "}
               <span className="text-yellow-200 font-bold">
-                grossistes pharmaceutiques
+                GROSSISTES PHARMA
               </span>
               .
             </span>
