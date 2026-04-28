@@ -11,10 +11,10 @@ export default function ProductBox3D({ className = "" }: ProductBox3DProps) {
     <div className={`product-box-container ${className}`}>
       <div className="product-box-wrapper">
         <Image
-          src="/synapgen-product.png"
+          src="/synapgen-3d.png"
           alt="Synapgen - Memory and Mental Vitality Supplement by HandSon"
-          width={640}
-          height={352}
+          width={560}
+          height={560}
           className="product-box-image object-contain"
           priority
         />

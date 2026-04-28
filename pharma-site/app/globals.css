@@ -278,12 +278,12 @@
 .product-box-wrapper {
   position: relative;
   transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
-  transform: rotateY(-8deg) rotateX(3deg);
+  transform: rotateY(0deg) rotateX(0deg);
   transform-style: preserve-3d;
 }
 
 .product-box-wrapper:hover {
-  transform: rotateY(-2deg) rotateX(1deg) scale(1.04);
+  transform: rotateY(-4deg) rotateX(2deg) scale(1.05);
 }
 
 .product-box-image {
