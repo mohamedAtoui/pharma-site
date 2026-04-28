@@ -46,7 +46,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr" data-lang="fr" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{var l=localStorage.getItem('hs_lang');if(l==='en'||l==='fr'){document.documentElement.dataset.lang=l;document.documentElement.lang=l;}}catch(e){}})();",
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

@@ -21,13 +21,32 @@ export default function AnnouncementBanner() {
                 />
               </span>
             </span>
-            <span lang="fr" className="sm:hidden whitespace-nowrap">
-              Synapgen disponible chez les grossistes.
+
+            {/* Mobile copy */}
+            <span data-lang-only="fr" lang="fr" className="sm:hidden whitespace-nowrap">
+              Synapgen disponible chez les{" "}
+              <span className="text-yellow-200 font-bold">grossistes pharma</span>
+              .
             </span>
-            <span lang="fr" className="hidden sm:inline">
-              Synapgen est disponible chez les grossistes pharmaceutiques.
+            <span data-lang-only="en" lang="en" className="sm:hidden whitespace-nowrap">
+              Synapgen available at pharmaceutical{" "}
+              <span className="text-yellow-200 font-bold">wholesalers</span>.
+            </span>
+
+            {/* Desktop copy */}
+            <span data-lang-only="fr" lang="fr" className="hidden sm:inline">
+              Synapgen est disponible chez les{" "}
+              <span className="text-yellow-200 font-bold">
+                grossistes pharmaceutiques
+              </span>
+              .
+            </span>
+            <span data-lang-only="en" lang="en" className="hidden sm:inline">
+              Synapgen is available at leading pharmaceutical{" "}
+              <span className="text-yellow-200 font-bold">wholesalers</span>.
             </span>
           </span>
+
           <span
             aria-hidden
             className="hidden sm:inline-block w-px h-4 bg-white/40"

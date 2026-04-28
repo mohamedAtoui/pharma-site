@@ -428,3 +428,9 @@ html {
   .synapgen-dance,
   .synapgen-slide { animation: none; }
 }
+
+/* ────────────────────────────────────────────
+   Language toggle — show only the active locale
+   ──────────────────────────────────────────── */
+html[data-lang="fr"] [data-lang-only="en"] { display: none; }
+html[data-lang="en"] [data-lang-only="fr"] { display: none; }
