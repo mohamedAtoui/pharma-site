@@ -29,9 +29,6 @@ export const metadata: Metadata = {
     "memory",
     "cognitive function",
   ],
-  icons: {
-    icon: "/favicon.ico",
-  },
   openGraph: {
     type: "website",
     locale: "en_US",
